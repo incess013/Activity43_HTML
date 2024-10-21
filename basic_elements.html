@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Elements</title>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My Website</h1>
+    <nav>
+        <ul>
+            <li><a href="#headings">Headings</a></li>
+            <li><a href="#paragraphs">Paragraphs</a></li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#divisions">Divisions</a></li>
+            <li><a href="#images">Images</a></li>
+            <li><a href="#canvas">Canvas</a></li>
+            <li><a href="#video">Video</a></li>
+            <li><a href="#youtube">YouTube Integration</a></li>
+            <li><a href="#dragdrop">Drag and Drop</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="headings">
+    <h2>Headings</h2>
+    <h1>This is a Heading 1</h1>
+    <h2>This is a Heading 2</h2>
+    <h3>This is a Heading 3</h3>
+    <h4>This is a Heading 4</h4>
+</section>
+
+<section id="paragraphs">
+    <h2>Paragraphs</h2>
+    <p>This is a paragraph of text that provides information. It is wrapped in a tag.</p>
+</section>
+
+<section id="lists">
+    <h2>Lists</h2>
+    <h4>Unordered Lists</h4>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <h4>Ordered Lists</h4>
+    <ol>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+</section>
+
+<section id="tables">
+    <h2>Tables</h2>
+    <table border="1" style="width: 50%;">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+        </tr>
+        <tr>
+            <td>Princess</td>
+            <td>19</td>
+            <td>BSIT</td>
+        </tr>
+        <tr>
+            <td>Sandara</td>
+            <td>19</td> 
+            <td>BSIT</td>
+        </tr>
+        <tr>
+            <td>Shamelle</td>
+            <td>20</td>
+            <td>BSIT</td>
+        </tr>
+        <tr>
+            <td>Shamel Jane</td>
+            <td>20</td>
+            <td>BSIT</td>
+        </tr>
+    </table>
+</section>
+
+<section id="forms">
+    <h2>Forms</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="male"> Male
+        <input type="radio" id="female" name="gender" value="female"> Female<br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</section>
+
+<section id="divisions">
+    <h2>Divisions</h2>
+    <div style="border: 1px solid black; padding: 10px; display: inline-block;">
+        This is a division containing some content.
+    </div>
+</section>
+
+
+<section id="images">
+    <h2>Images</h2>
+    <img src="https://via.placeholder.com/150" alt="Placeholder Image" width="150" height="150">
+</section>
+
+<section id="canvas">
+    <h2>Canvas</h2>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(20, 20, 150, 50);
+    </script>
+</section>
+
+<section id="video">
+    <h2>Video</h2>
+    <video width="320" height="240" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section id="youtube">
+    <h2>YouTube Integration</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<section id="dragdrop">
+    <h2>Drag and Drop</h2>
+    <div id="drag1" draggable="true" ondragstart="drag(event)" style="width:100px;height:100px;background-color:red;"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style="width:300px;height:300px;background-color:lightblue;">
+        Drop here
+    </div>
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</section>
+
+<footer>
+    <p>&copy; 2024 My Website. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
